@@ -1,0 +1,46 @@
+{
+    "name": "1ButtonPlayer",
+    "maps": [
+        {
+            "name": "Input",
+            "id": "23ac4d8c-dd32-43d0-ac5b-8b2178e19dce",
+            "actions": [
+                {
+                    "name": "Uno",
+                    "type": "Button",
+                    "id": "254e2fba-b672-4781-b101-aafc20f2da66",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ab91f276-4c25-4616-bff9-75e0df54bd99",
+                    "path": "<Keyboard>/w",
+                    "interactions": "Tap,Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Uno",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "KBPlayer",
+            "bindingGroup": "KBPlayer",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
