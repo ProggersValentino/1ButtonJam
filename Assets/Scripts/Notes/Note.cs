@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class Note : MonoBehaviour
 {
-    public Sprite sprite;
+    //public Sprite sprite;
     public float tempo;
     public bool canBePressed;
     public NoteData ND;
@@ -13,7 +13,7 @@ public abstract class Note : MonoBehaviour
     private void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
-        renderer.sprite = sprite;
+        renderer.sprite = ND.sprite;
 
         tempo = tempo / 60f; //align tempo with 60fps
     }
