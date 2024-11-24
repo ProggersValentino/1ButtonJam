@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     private PlayerInput pi;
     private InputAction uno;
 
+    
+    
     private void Awake()
     {
         pi = GetComponent<PlayerInput>();
@@ -16,10 +18,16 @@ public class PlayerController : MonoBehaviour
 
         Debug.LogWarning($"uno {uno.name}");
         
-        //if we want to differentiate what type the player pressed than we must separate tap and hold into two different callbacks
+        //if we want to differentiate what type the player pressed with both activating than we must separate tap and hold into two different callbacks
         uno.started += context =>
-        { 
-            if(context.interaction is HoldInteraction) Debug.LogWarning("held in");
+        {
+            if (context.interaction is HoldInteraction)
+            {
+                if (NoteEventSystem.OnNoteIsInZone() is Hold)
+                {
+                    PlayerEventSystem.OnHitNote();
+                }
+            }
             
         };
 
@@ -28,24 +36,23 @@ public class PlayerController : MonoBehaviour
             if (context.interaction is TapInteraction)
             {
                 Debug.LogWarning("tapped in");
-
-                //determine if we have a note in zone
-                if (NoteEventSystem.OnNoteIsInZone())
+                
+                //determine if we have the right type of note in zone
+                if (NoteEventSystem.OnNoteIsInZone() is Tap)
                 {
                     //execute tap note stuff
                     PlayerEventSystem.OnHitNote();
                 }
+                else
+                {
+                    Debug.LogWarning($"wrong input for note");
+                }
 
             }
         };
-
-
-
-
-    }
-
-    public void OnBtnPressed(ContextCallback callback)
-    {
         
     }
+    
+    
+    
 }

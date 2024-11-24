@@ -33,10 +33,12 @@ public class DetectNote : MonoBehaviour
         }
     }
 
+    //note missed
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.TryGetComponent<Note>(out Note note))
         {
+            PlayerEventSystem.OnMissNote();
             currentNote = null;
         }   
     }
@@ -45,11 +47,11 @@ public class DetectNote : MonoBehaviour
     /// takes in the currentNote and determines if there is a current note in zone
     /// </summary>
     /// <returns>true or false</returns>
-    public bool DoWeHaveNote()
+    public Note DoWeHaveNote()
     {
-        if(currentNote != null) return true;
+        if(currentNote != null) return currentNote;
         
-        return false;
+        return null;
     }
 
     

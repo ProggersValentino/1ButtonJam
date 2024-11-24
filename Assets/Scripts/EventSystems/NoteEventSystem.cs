@@ -7,8 +7,8 @@ using UnityEngine;
 /// </summary>
 public class NoteEventSystem : MonoBehaviour
 {
-    public static event Func<bool> NoteIsInZone;
+    public static event Func<Note> NoteIsInZone;
 
 
-    public static bool OnNoteIsInZone() => NoteIsInZone?.Invoke() ?? false; //call event, if null default return false
+    public static Note OnNoteIsInZone() => NoteIsInZone?.Invoke(); //call event, if null default return false
 }
