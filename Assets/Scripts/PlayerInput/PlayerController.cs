@@ -38,15 +38,9 @@ public class PlayerController : MonoBehaviour
                 Debug.LogWarning("tapped in");
                 
                 //determine if we have the right type of note in zone
-                if (NoteEventSystem.OnNoteIsInZone() is Tap)
-                {
-                    //execute tap note stuff
-                    PlayerEventSystem.OnHitNote();
-                }
-                else
-                {
-                    Debug.LogWarning($"wrong input for note");
-                }
+                if (NoteEventSystem.OnNoteIsInZone() is Tap) PlayerEventSystem.OnHitNote();
+                
+                else Debug.LogWarning($"wrong input for note");
 
             }
         };

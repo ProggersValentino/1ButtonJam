@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -8,15 +9,27 @@ using UnityEngine;
 /// </summary>
 public class DetectNote : MonoBehaviour
 {
-    /*bool */
-    
     [CanBeNull] Note currentNote = null;
 
 
-    private void Awake()
+    private void OnEnable()
     {
         NoteEventSystem.NoteIsInZone += DoWeHaveNote; //adding method to our chain so that when the event is called this is called
-        PlayerEventSystem.HitNote += KillCurrentNote;
+        PlayerEventSystem.HitNote += ProcessNoteKill;
+        PlayerEventSystem.MissNote += ProcessNoteKill;
+    }
+
+    private void OnDisable()
+    {
+        //prevent from having memory leaks
+        NoteEventSystem.NoteIsInZone -= DoWeHaveNote;
+        PlayerEventSystem.HitNote -= ProcessNoteKill;
+        PlayerEventSystem.MissNote -= ProcessNoteKill;
+    }
+
+    private void Awake()
+    {
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -58,8 +71,24 @@ public class DetectNote : MonoBehaviour
     /// <summary>
     /// Kills the note in the zone
     /// </summary>
-    public void KillCurrentNote()
+    public async void ProcessNoteKill()
     {
+        //testing async calc allowing calculation to be done on another thread
+        Task<float> disCalc = DetermineNoteDisFromCentre();
+        
+        await disCalc; 
+        
+        Debug.Log($"our distance from centre of zone is {disCalc.Result}");
+        
         currentNote?.DeathNote(); //kill note
+    }
+
+    /// <summary>
+    /// this takes the current pos and the current notes pos and spits out a float of distance
+    /// </summary>
+    /// <returns>float of distance between centre of zone and current note</returns>
+    public Task<float> DetermineNoteDisFromCentre()
+    {
+        return Task.FromResult(Vector2.Distance(transform.position, currentNote.transform.position));
     }
 }
