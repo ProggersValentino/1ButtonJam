@@ -11,7 +11,7 @@
                     "id": "254e2fba-b672-4781-b101-aafc20f2da66",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold,Tap",
                     "initialStateCheck": false
                 }
             ],

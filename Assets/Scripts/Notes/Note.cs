@@ -38,4 +38,14 @@ public abstract class Note : MonoBehaviour
             canBePressed = false;
         }
     }
+
+    /// <summary>
+    /// note goes bye bye 
+    /// </summary>
+    public void DeathNote()
+    {
+        //play audio cue
+        //death anim
+        Destroy(gameObject);
+    }
 }
