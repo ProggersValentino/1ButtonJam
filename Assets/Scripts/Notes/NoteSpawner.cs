@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class NoteSpawner : MonoBehaviour
 {
-    [SerializeField] private List<Note> notes;
+    public List<Note> notes;
+    public bool hasStarted;
+    public float currentTempo;
     private float rnd;
 
     private float timeElapsed = 0f;
@@ -17,27 +19,31 @@ public class NoteSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //temporary code for testing
-        if (Time.time > timeElapsed + rnd)
+        if (hasStarted)
         {
-            if (notes.Count > 0)
+            //temporary code for testing
+            if (Time.time > timeElapsed + rnd)
             {
-                SpawnNote(notes[0]);
-                RemoveNote(notes[0]);
-            }
-            else
-            {
-                Debug.Log("out of notes");
-            }
+                if (notes.Count > 0)
+                {
+                    SpawnNote(notes[0]);
+                    RemoveNote(notes[0]);
+                }
+                else
+                {
+                    Debug.Log("out of notes");
+                }
             
-            rnd = Random.Range(0.1f, 2);
-            timeElapsed = Time.time + rnd;
+                rnd = Random.Range(0.1f, 2);
+                timeElapsed = Time.time + rnd;
+            }
         }
     }
 
     public void SpawnNote(Note note)
     {
-        Instantiate(note, this.gameObject.transform);
+        Note temp = Instantiate(note, this.gameObject.transform);
+        temp.tempo = currentTempo;
     }
 
     public void AddNote(Note note)

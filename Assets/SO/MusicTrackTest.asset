@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f362b72c9f074e4b8c8a30aaa39b861, type: 3}
   m_Name: MusicTrackTest
   m_EditorClassIdentifier: 
-  track: {fileID: 0}
-  tempo: 0
+  track: {fileID: 8300000, guid: 850c5e6fa2b7ddc46b69acb418d1f167, type: 3}
+  tempo: 120
   notes: []

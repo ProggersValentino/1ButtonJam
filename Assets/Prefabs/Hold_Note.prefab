@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1102c7f26ff582f43b463003a2b01576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tempo: 0
+  tempo: 120
   canBePressed: 0
   ND: {fileID: 11400000, guid: 8806e61b87d7ade4eaa46290a86d50e4, type: 2}
   secsHeld: 1
