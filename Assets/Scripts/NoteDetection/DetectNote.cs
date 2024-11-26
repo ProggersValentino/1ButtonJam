@@ -80,6 +80,8 @@ public class DetectNote : MonoBehaviour
         
         Debug.Log($"our distance from centre of zone is {disCalc.Result}");
         
+        ScoreEventSystem.OnUpdateScore(disCalc.Result, currentNote); //transmitting the necessary data for calculating & updating the score
+        
         currentNote?.DeathNote(); //kill note
     }
 
@@ -89,6 +91,14 @@ public class DetectNote : MonoBehaviour
     /// <returns>float of distance between centre of zone and current note</returns>
     public Task<float> DetermineNoteDisFromCentre()
     {
-        return Task.FromResult(Vector2.Distance(transform.position, currentNote.transform.position));
+        float disFromCentre = Vector2.Distance(transform.position, currentNote.transform.position);
+        
+        //getting the direction of note last pos
+        Vector2 direction = (currentNote.transform.position - transform.position).normalized;
+        
+        disFromCentre *= direction.x; //apply directional factor to get the direction the note was when the player tapped
+        
+        
+        return Task.FromResult(disFromCentre);
     }
 }
