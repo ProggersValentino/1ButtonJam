@@ -704,6 +704,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NoteSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 1696684681726581530, guid: 3cd804772113bbd4882ebec6f3909b38, type: 3}
+      propertyPath: hasStarted
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696684681726581530, guid: 3cd804772113bbd4882ebec6f3909b38, type: 3}
+      propertyPath: currentTempo
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 7248352635949922917, guid: 3cd804772113bbd4882ebec6f3909b38, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.49
