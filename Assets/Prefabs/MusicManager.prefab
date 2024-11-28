@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &501933170808411903
+--- !u!1 &923608180338885302
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7248352635949922917}
-  - component: {fileID: 1696684681726581530}
+  - component: {fileID: 5264314508015414510}
+  - component: {fileID: 5360226386216798647}
   m_Layer: 0
-  m_Name: NoteSpawner
+  m_Name: MusicManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7248352635949922917
+--- !u!4 &5264314508015414510
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501933170808411903}
+  m_GameObject: {fileID: 923608180338885302}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.47, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1696684681726581530
+--- !u!114 &5360226386216798647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 501933170808411903}
+  m_GameObject: {fileID: 923608180338885302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a545992e5f23d459b99133044a7765, type: 3}
+  m_Script: {fileID: 11500000, guid: 55c46ed0cff36294e8450ca5ac8db17c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasStarted: 0
-  currentTempo: 0
-  tapPrefab: {fileID: 2083675193733456794, guid: f0239680a40f9814a8fd49f69c3cb0d4, type: 3}
-  holdPrefab: {fileID: -6615954187557077944, guid: 98445983c978fad4391f5c234ecac8a4, type: 3}
-  noteSpaces: []
-  noteTypes: []
+  music: {fileID: 0}
+  musicTracks:
+  - {fileID: 11400000, guid: 59d0ffaee2c8861408955943d102b4be, type: 2}
+  startPlaying: 0
+  NS: {fileID: 0}

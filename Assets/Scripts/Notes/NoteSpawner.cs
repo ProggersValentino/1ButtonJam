@@ -3,17 +3,24 @@ using UnityEngine;
 
 public class NoteSpawner : MonoBehaviour
 {
-    public List<Note> notes;
     public bool hasStarted;
     public float currentTempo;
-    private float rnd;
+
+    [SerializeField] private Note tapPrefab;
+    [SerializeField] private Note holdPrefab;
+    public float[] noteSpaces;
+    private int noteSpaceIndex = 0;
+    public float[] noteTypes; //0 for tap and 1 for hold
 
     private float timeElapsed = 0f;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //notes = new List<Note>();
-        rnd = Random.Range(0.1f, 2);
+        if (noteSpaces.Length != noteTypes.Length)
+        {
+            Debug.Log("Warning: note spaces and note type arrays are not the same size");
+        }
     }
 
     // Update is called once per frame
@@ -21,21 +28,28 @@ public class NoteSpawner : MonoBehaviour
     {
         if (hasStarted)
         {
-            //temporary code for testing
-            if (Time.time > timeElapsed + rnd)
+            if (Time.time > timeElapsed + noteSpaces[noteSpaceIndex])
             {
-                if (notes.Count > 0)
+                if (noteTypes[noteSpaceIndex] == 1)
                 {
-                    SpawnNote(notes[0]);
-                    RemoveNote(notes[0]);
+                    SpawnNote(holdPrefab);
+                }
+                else if(noteTypes[noteSpaceIndex] == 0)
+                {
+                    SpawnNote(tapPrefab);
                 }
                 else
                 {
-                    Debug.Log("out of notes");
+                    Debug.Log("wrong format");
                 }
-            
-                rnd = Random.Range(0.1f, 2);
-                timeElapsed = Time.time + rnd;
+
+                noteSpaceIndex++;
+                if (noteSpaceIndex >= noteSpaces.Length)
+                {
+                    noteSpaceIndex = 0;
+                }
+                Debug.Log(noteSpaceIndex);
+                timeElapsed = Time.time + noteSpaces[noteSpaceIndex];
             }
         }
     }
@@ -46,13 +60,4 @@ public class NoteSpawner : MonoBehaviour
         temp.tempo = currentTempo;
     }
 
-    public void AddNote(Note note)
-    {
-        notes.Add(note);
-    }
-
-    public void RemoveNote(Note note)
-    {
-        notes.Remove(note);
-    }
 }

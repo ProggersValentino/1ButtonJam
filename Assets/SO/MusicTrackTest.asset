@@ -14,4 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   track: {fileID: 8300000, guid: 850c5e6fa2b7ddc46b69acb418d1f167, type: 3}
   tempo: 120
-  notes: []
+  noteSpaces:
+  - 1
+  - 0.1
+  - 1.5
+  noteTypes:
+  - 0
+  - 1
+  - 0

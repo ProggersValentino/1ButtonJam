@@ -6,7 +6,7 @@ public class MusicManager : MonoBehaviour
     public AudioSource music;
     
     public List<MusicTrackSO> musicTracks;
-    public MusicTrackSO currentTrack;
+    private MusicTrackSO currentTrack;
 
     public bool startPlaying;
     public NoteSpawner NS;
@@ -60,7 +60,8 @@ public class MusicManager : MonoBehaviour
         musicTracks.Remove(musicTracks[0]); //dequeue
         
         music.clip = currentTrack.track;
-        NS.currentTempo = currentTrack.tempo;
-        NS.notes = currentTrack.notes;
+        NS.currentTempo = currentTrack.tempo; 
+        NS.noteSpaces = currentTrack.noteSpaces;
+        NS.noteTypes = currentTrack.noteTypes;
     }
 }

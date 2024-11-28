@@ -6,5 +6,6 @@ public class MusicTrackSO : ScriptableObject
 {
     public AudioClip track;
     public float tempo;
-    public List<Note> notes;
+    public float[] noteSpaces; //seconds between each note
+    public float[] noteTypes; //0 for tap and 1 for hold
 }
