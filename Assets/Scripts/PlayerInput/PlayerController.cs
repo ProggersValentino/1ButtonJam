@@ -25,8 +25,9 @@ public class PlayerController : MonoBehaviour
             {
                 if (NoteEventSystem.OnNoteIsInZone() is Hold)
                 {
-                    PlayerEventSystem.OnHoldNoteActivate(true);
+                  
                 }
+                PlayerEventSystem.OnHoldNoteActivate(true);
             }
             
         };

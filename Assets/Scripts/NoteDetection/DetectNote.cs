@@ -18,6 +18,7 @@ public class DetectNote : MonoBehaviour
         NoteEventSystem.NoteIsInZone += DoWeHaveNote; //adding method to our chain so that when the event is called this is called
         PlayerEventSystem.TapNote += ProcessNoteKill;
         PlayerEventSystem.MissNote += ProcessNoteKill;
+        PlayerEventSystem.HoldNoteActivate += HoldActivated;
     }
 
     private void OnDisable()
@@ -26,6 +27,7 @@ public class DetectNote : MonoBehaviour
         NoteEventSystem.NoteIsInZone -= DoWeHaveNote;
         PlayerEventSystem.TapNote -= ProcessNoteKill;
         PlayerEventSystem.MissNote -= ProcessNoteKill;
+        PlayerEventSystem.HoldNoteActivate -= HoldActivated;
     }
 
     private void Awake()
@@ -59,7 +61,18 @@ public class DetectNote : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        
+        if (onHoldActivated && currentNote is Hold) 
+        {
+            Debug.LogWarning($"we are currently holding {onHoldActivated}");
+        }
+    }
+
+    private void Update()
+    {
+        if (onHoldActivated)
+        {
+            Debug.LogWarning($"we are currently holding {onHoldActivated}");
+        }
     }
 
     /// <summary>
@@ -106,5 +119,10 @@ public class DetectNote : MonoBehaviour
         
         
         return Task.FromResult(disFromCentre);
+    }
+
+    public void HoldActivated(bool isActivated)
+    {
+        onHoldActivated = isActivated;
     }
 }
