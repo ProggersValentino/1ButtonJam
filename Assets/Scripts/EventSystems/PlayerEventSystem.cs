@@ -7,11 +7,13 @@ using UnityEngine;
 /// </summary>
 public class PlayerEventSystem : MonoBehaviour
 {
-    public static event Action HitNote;
+    public static event Action TapNote;
     public static event Action MissNote;
+    public static event Action<bool> HoldNoteActivate;
 
     
-    public static void OnHitNote() => HitNote?.Invoke();
+    public static void OnTapNote() => TapNote?.Invoke();
     public static void OnMissNote() => MissNote?.Invoke();
+    public static void OnHoldNoteActivate(bool isActivating) => HoldNoteActivate?.Invoke(isActivating);
 
 }

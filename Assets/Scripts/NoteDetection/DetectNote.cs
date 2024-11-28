@@ -11,11 +11,12 @@ public class DetectNote : MonoBehaviour
 {
     [CanBeNull] Note currentNote = null;
 
-
+    private bool onHoldActivated;
+    
     private void OnEnable()
     {
         NoteEventSystem.NoteIsInZone += DoWeHaveNote; //adding method to our chain so that when the event is called this is called
-        PlayerEventSystem.HitNote += ProcessNoteKill;
+        PlayerEventSystem.TapNote += ProcessNoteKill;
         PlayerEventSystem.MissNote += ProcessNoteKill;
     }
 
@@ -23,7 +24,7 @@ public class DetectNote : MonoBehaviour
     {
         //prevent from having memory leaks
         NoteEventSystem.NoteIsInZone -= DoWeHaveNote;
-        PlayerEventSystem.HitNote -= ProcessNoteKill;
+        PlayerEventSystem.TapNote -= ProcessNoteKill;
         PlayerEventSystem.MissNote -= ProcessNoteKill;
     }
 
@@ -55,7 +56,12 @@ public class DetectNote : MonoBehaviour
             currentNote = null;
         }   
     }
-    
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        
+    }
+
     /// <summary>
     /// takes in the currentNote and determines if there is a current note in zone
     /// </summary>
