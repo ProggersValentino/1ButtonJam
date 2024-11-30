@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static TreeEditor.TreeEditorHelper;
 
 public class NoteSpawner : MonoBehaviour
 {
@@ -9,18 +10,21 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] private Note tapPrefab;
     [SerializeField] private Note holdPrefab;
     [SerializeField] private MenuNote menuPrefab;
-    public float[] noteSpaces;
-    private int noteSpaceIndex = 0;
-    public float[] noteTypes; //0 for tap and 1 for hold
+    public NoteSection[] sections;
+    private int noteSectionIndex = 0;
+    private int noteSpaceIndex = 0; //0 for tap and 1 for hold
 
     private float timeElapsed = 0f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (noteSpaces.Length != noteTypes.Length)
+        foreach (var section in sections)
         {
-            Debug.Log("Warning: note spaces and note type arrays are not the same size");
+            if (section.noteSpaces.Length != section.noteTypes.Length)
+            {
+                Debug.Log("Warning: note spaces and note type arrays are not the same size");
+            }
         }
     }
 
@@ -29,17 +33,17 @@ public class NoteSpawner : MonoBehaviour
     {
         if (hasStarted)
         {
-            if (Time.time > timeElapsed + noteSpaces[noteSpaceIndex])
+            if (Time.time > timeElapsed + sections[noteSectionIndex].noteSpaces[noteSpaceIndex])
             {
-                if (noteTypes[noteSpaceIndex] == 1)
+                if (sections[noteSectionIndex].noteTypes[noteSpaceIndex] == 1)
                 {
                     SpawnNote(holdPrefab);
                 }
-                else if(noteTypes[noteSpaceIndex] == 0)
+                else if(sections[noteSectionIndex].noteTypes[noteSpaceIndex] == 0)
                 {
                     SpawnNote(tapPrefab);
                 }
-                else if(noteTypes[noteSpaceIndex] == 2)
+                else if(sections[noteSectionIndex].noteTypes[noteSpaceIndex] == 2)
                 {
                     SpawnNote(menuPrefab, noteSpaceIndex);
                 }
@@ -49,12 +53,13 @@ public class NoteSpawner : MonoBehaviour
                 }
 
                 noteSpaceIndex++;
-                if (noteSpaceIndex >= noteSpaces.Length)
+                if (noteSpaceIndex >= sections[noteSectionIndex].noteSpaces.Length)
                 {
+                    noteSectionIndex++;
                     noteSpaceIndex = 0;
                 }
                 Debug.Log(noteSpaceIndex);
-                timeElapsed = Time.time + noteSpaces[noteSpaceIndex];
+                timeElapsed = Time.time + sections[noteSectionIndex].noteSpaces[noteSpaceIndex];
             }
         }
     }

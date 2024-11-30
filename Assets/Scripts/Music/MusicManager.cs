@@ -7,6 +7,7 @@ public class MusicManager : MonoBehaviour
     
     public List<MusicTrackSO> musicTracks;
     private MusicTrackSO currentTrack;
+    public float delayInSecs;
 
     public bool startPlaying;
     public NoteSpawner NS;
@@ -34,8 +35,8 @@ public class MusicManager : MonoBehaviour
             {
                 startPlaying = true;
                 NS.hasStarted = true;
-                
-                music.Play();
+
+                music.PlayDelayed(delayInSecs);
             }
         }
         else if (!music.isPlaying)
@@ -61,7 +62,7 @@ public class MusicManager : MonoBehaviour
         
         music.clip = currentTrack.track;
         NS.currentTempo = currentTrack.tempo; 
-        NS.noteSpaces = currentTrack.noteSpaces;
-        NS.noteTypes = currentTrack.noteTypes;
+        NS.sections = currentTrack.sections;
     }
+
 }
