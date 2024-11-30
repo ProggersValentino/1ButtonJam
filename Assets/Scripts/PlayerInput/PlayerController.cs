@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     private PlayerInput pi;
     private InputAction uno;
-
+    
     
     
     private void Awake()
@@ -25,8 +25,9 @@ public class PlayerController : MonoBehaviour
             {
                 if (NoteEventSystem.OnNoteIsInZone() is Hold)
                 {
-                    PlayerEventSystem.OnHitNote();
+                  
                 }
+                PlayerEventSystem.OnHoldNoteActivate(true);
             }
             
         };
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
                 Debug.LogWarning("tapped in");
                 
                 //determine if we have the right type of note in zone
-                if (NoteEventSystem.OnNoteIsInZone() is Tap) PlayerEventSystem.OnHitNote();
+                if (NoteEventSystem.OnNoteIsInZone() is Tap) PlayerEventSystem.OnTapNote();
                 
                 else Debug.LogWarning($"wrong input for note");
 
@@ -46,7 +47,12 @@ public class PlayerController : MonoBehaviour
         };
         
     }
-    
-    
-    
+
+    private void Update()
+    {
+        if (uno.WasReleasedThisFrame())
+        {
+            PlayerEventSystem.OnHoldNoteActivate(false);
+        }
+    }
 }
