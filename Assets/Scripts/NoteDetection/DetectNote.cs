@@ -1,7 +1,9 @@
 using System;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 /// <summary>
 /// the purpose of this script is to update keep track and process notes that go in zone
@@ -100,8 +102,12 @@ public class DetectNote : MonoBehaviour
         Debug.Log($"our distance from centre of zone is {disCalc.Result}");
         
         ScoreEventSystem.OnUpdateScore(disCalc.Result, currentNote); //transmitting the necessary data for calculating & updating the score
-        
-        currentNote?.DeathNote(); //kill note
+
+        if (currentNote.TryGetComponent<MenuNote>(out MenuNote note)){
+            note.DeathNote(disCalc.Result);
+        } else {
+            currentNote?.DeathNote();
+        }
     }
 
     /// <summary>

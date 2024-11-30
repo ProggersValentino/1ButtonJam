@@ -42,7 +42,7 @@ public abstract class Note : MonoBehaviour
     /// <summary>
     /// note goes bye bye 
     /// </summary>
-    public void DeathNote()
+    public virtual void DeathNote()
     {
         //play audio cue
         //death anim

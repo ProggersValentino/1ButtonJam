@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72d58ca1eba8a304d8338e5484a42c46, type: 3}
+  m_Name: MenuTest
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 5352286359449648278, guid: 6dde228027d6f9a4d84dc25ee7f6240c, type: 3}
+  animation: {fileID: 0}
+  sfx: {fileID: 0}

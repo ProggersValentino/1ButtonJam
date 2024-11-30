@@ -8,6 +8,7 @@ public class NoteSpawner : MonoBehaviour
 
     [SerializeField] private Note tapPrefab;
     [SerializeField] private Note holdPrefab;
+    [SerializeField] private MenuNote menuPrefab;
     public float[] noteSpaces;
     private int noteSpaceIndex = 0;
     public float[] noteTypes; //0 for tap and 1 for hold
@@ -38,6 +39,10 @@ public class NoteSpawner : MonoBehaviour
                 {
                     SpawnNote(tapPrefab);
                 }
+                else if(noteTypes[noteSpaceIndex] == 2)
+                {
+                    SpawnNote(menuPrefab, noteSpaceIndex);
+                }
                 else
                 {
                     Debug.Log("wrong format");
@@ -58,6 +63,16 @@ public class NoteSpawner : MonoBehaviour
     {
         Note temp = Instantiate(note, this.gameObject.transform);
         temp.tempo = currentTempo;
+    }
+
+    // Override for spawning menu notes, this allows the index to be passed so it can update the menu choice appropriately]
+    // Might change this when moving on from main menu
+    public void SpawnNote(MenuNote note, int noteIndex)
+    {
+        MenuNote temp = Instantiate(note, this.gameObject.transform);
+        temp.tempo = currentTempo;
+        temp.sceneIndex = noteIndex;
+        temp.SetText();
     }
 
 }
