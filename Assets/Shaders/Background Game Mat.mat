@@ -84,12 +84,13 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _EnableExternalAlpha: 0
+    - _PinkStrength: 0.5
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Colour: {r: 1, g: 1, b: 1, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Speed: {r: 0, g: 0, b: 0, a: 0}
+    - _Speed: {r: 0.09, g: 0.16, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1039281119186541920
