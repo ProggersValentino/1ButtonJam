@@ -34,4 +34,304 @@ MonoBehaviour:
     - 0
     - 0
     - 0
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.75
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.75
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
     - 0

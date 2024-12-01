@@ -72,6 +72,7 @@ public class NoteSpawner : MonoBehaviour
     {
         Note temp = Instantiate(note, this.gameObject.transform);
         temp.tempo = currentTempo;
+        Debug.Log(noteSectionIndex.ToString() + " " + noteSpaceIndex.ToString());
     }
 
     // Override for spawning menu notes, this allows the index to be passed so it can update the menu choice appropriately]
