@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
 
     private bool swatAnimationFinishing;
     
-    public AnimationCurve animationCurve;
-    
     public GameObject flySwat;
     public AnimationClip flySwatAnim;
     public AnimationClip flySwatIdle;
@@ -114,13 +112,11 @@ public class PlayerController : MonoBehaviour
         
         Debug.LogWarning($"flySwat {time}");
         
-        await Task.Delay((int)time); //await for animation to finish
-
-        swatAnimationFinishing = true;
+        await Task.Delay((int)time); //await for animation to partially finish
         
         PlayerEventSystem.OnTapNote();
         
-        await Task.Delay((int)minusEarly);
+        await Task.Delay((int)minusEarly); //await the rest of the animation to finish
         
         Debug.LogWarning($"waited");
 

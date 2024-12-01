@@ -9,6 +9,8 @@ public class Hold : Note
     public void TakeHealth(float amount)
     {
         health -= amount;
+        
+        if(health <= 0) DeathNote();
     }
     
 }

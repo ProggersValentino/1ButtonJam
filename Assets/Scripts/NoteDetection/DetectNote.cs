@@ -64,7 +64,7 @@ public class DetectNote : MonoBehaviour
         }   
     }
 
-    private async void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (onHoldActivated && currentNote is Hold) 
         {
@@ -76,8 +76,6 @@ public class DetectNote : MonoBehaviour
             currentNote.areStopping = true;
             
             holdNote.TakeHealth(250f);
-            
-            await Task.Delay(500); //hit interval
         }
         else
         {
@@ -113,7 +111,7 @@ public class DetectNote : MonoBehaviour
         Note targetNote = currentNote;
         
         //testing async calc allowing calculation to be done on another thread
-        Task<float> disCalc = DetermineNoteDisFromCentre();
+        Task<float> disCalc = DetermineNoteDisFromCentre(targetNote);
         
         await disCalc; 
         
@@ -134,7 +132,7 @@ public class DetectNote : MonoBehaviour
     /// this takes the current pos and the current notes pos and spits out a float of distance
     /// </summary>
     /// <returns>float of distance between centre of zone and current note</returns>
-    public Task<float> DetermineNoteDisFromCentre()
+    public Task<float> DetermineNoteDisFromCentre(Note noteToInput)
     {
         float disFromCentre = Vector2.Distance(transform.position, currentNote.transform.position);
         

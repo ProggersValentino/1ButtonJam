@@ -7,14 +7,15 @@ public abstract class Note : MonoBehaviour
     //public Sprite sprite;
     public float tempo;
     public bool canBePressed;
-    public bool areStopping;
+    public bool areStopping = false;
     public NoteData ND;
 
     private SpriteRenderer renderer;
-
+    private Animator animator;
     private void Start()
     {
         renderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         renderer.sprite = ND.sprite;
 
         tempo = tempo / 60f; //align tempo with 60fps
@@ -22,7 +23,7 @@ public abstract class Note : MonoBehaviour
 
     private void Update()
     {
-        if(!areStopping)transform.position -= new Vector3(tempo * Time.deltaTime, 0f, 0f);
+        if(!areStopping) transform.position -= new Vector3(tempo * Time.deltaTime, 0f, 0f);
     }
     
 
@@ -34,9 +35,9 @@ public abstract class Note : MonoBehaviour
         //play audio cue
         //death anim
         areStopping = true;
-        renderer.sprite = ND.deathSprite;
+        animator.SetBool("Death", true);
         //Debug.Log(gameObject);
-        await Task.Delay(200);
+        await Task.Delay(300);
         
         Destroy(gameObject);
     }
