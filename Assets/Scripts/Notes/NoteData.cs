@@ -4,6 +4,8 @@ using UnityEngine;
 public class NoteData : ScriptableObject
 {
     public Sprite sprite;
-    public Animation animation;
+    public Sprite deathSprite;
+    public AnimationClip animation;
     public AudioClip sfx;
 }
+

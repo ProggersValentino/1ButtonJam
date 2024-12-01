@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public abstract class Note : MonoBehaviour
@@ -6,6 +7,7 @@ public abstract class Note : MonoBehaviour
     //public Sprite sprite;
     public float tempo;
     public bool canBePressed;
+    public bool areStopping;
     public NoteData ND;
 
     private SpriteRenderer renderer;
@@ -20,33 +22,22 @@ public abstract class Note : MonoBehaviour
 
     private void Update()
     {
-        transform.position -= new Vector3(tempo * Time.deltaTime, 0f, 0f);
+        if(!areStopping)transform.position -= new Vector3(tempo * Time.deltaTime, 0f, 0f);
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Activator")
-        {
-            canBePressed = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Activator")
-        {
-            canBePressed = false;
-        }
-    }
+    
 
     /// <summary>
     /// note goes bye bye 
     /// </summary>
-    public virtual void DeathNote()
+    public virtual async void DeathNote()
     {
         //play audio cue
         //death anim
+        areStopping = true;
+        renderer.sprite = ND.deathSprite;
         //Debug.Log(gameObject);
+        await Task.Delay(200);
+        
         Destroy(gameObject);
     }
 }

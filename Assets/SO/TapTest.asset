@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d58ca1eba8a304d8338e5484a42c46, type: 3}
   m_Name: TapTest
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  animation: {fileID: 0}
+  sprite: {fileID: 5352286359449648278, guid: 6dde228027d6f9a4d84dc25ee7f6240c, type: 3}
+  deathSprite: {fileID: -4811808244201201518, guid: 1778832827d9db74daa1c77067618702, type: 3}
+  animation: {fileID: 7400000, guid: ea60dffdc49e4cd45b6c14d17b82ef0e, type: 2}
   sfx: {fileID: 0}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d58ca1eba8a304d8338e5484a42c46, type: 3}
   m_Name: HoldTest
   m_EditorClassIdentifier: 
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 6683824723375466544, guid: a4cbffddfbb84a546806ed11b331fdbf, type: 3}
   animation: {fileID: 0}
   sfx: {fileID: 0}
