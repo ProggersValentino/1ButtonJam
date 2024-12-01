@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MusicManager : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class MusicManager : MonoBehaviour
     public List<MusicTrackSO> musicTracks;
     private MusicTrackSO currentTrack;
     public float delayInSecs;
+    private float countDown;
+
+    public TMP_Text countDownUI;
 
     public bool startPlaying;
     public NoteSpawner NS;
@@ -15,6 +19,8 @@ public class MusicManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        countDown = delayInSecs;
+        countDownUI.text = (Mathf.CeilToInt(countDown)).ToString();
         if (musicTracks.Count > 0)
         {
             CueTrack();
@@ -31,13 +37,10 @@ public class MusicManager : MonoBehaviour
     {
         if (!startPlaying)
         {
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                startPlaying = true;
-                NS.hasStarted = true;
+            startPlaying = true;
+            NS.hasStarted = true;
 
-                music.PlayDelayed(delayInSecs);
-            }
+            music.PlayDelayed(delayInSecs);
         }
         else if (!music.isPlaying)
         {
@@ -52,6 +55,16 @@ public class MusicManager : MonoBehaviour
             {
                 Debug.Log("end game");
             }
+        }
+
+        countDown = countDown - Time.deltaTime;
+        if (countDown >= 0)
+        {
+            countDownUI.text = (Mathf.CeilToInt(countDown)).ToString();
+        }
+        else
+        {
+            countDownUI.gameObject.SetActive(false);
         }
     }
 

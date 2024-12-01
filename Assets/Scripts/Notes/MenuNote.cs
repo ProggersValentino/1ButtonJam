@@ -37,6 +37,7 @@ public class MenuNote : Note
                 Application.Quit();
                 EditorApplication.isPlaying = false;
             }
+            Debug.Log("tm.text");
             SceneManager.LoadScene(tm.text);
         }
 
