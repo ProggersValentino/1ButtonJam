@@ -18,7 +18,7 @@ public class MenuNote : Note
             case 1:
                 tm.text = "MainMenu";
                 break;
-            default:
+            case 2:
                 tm.text = "Quit";
                 break;
         }
@@ -34,11 +34,9 @@ public class MenuNote : Note
                 Application.Quit();
                 EditorApplication.isPlaying = false;
             }
-            Debug.Log("tm.text");
+            Debug.Log(tm.text);
             SceneManager.LoadScene(tm.text);
         }
-
-        
         
     }
 

@@ -46,6 +46,7 @@ public abstract class Note : MonoBehaviour
     {
         //play audio cue
         //death anim
+        //Debug.Log(gameObject);
         Destroy(gameObject);
     }
 }

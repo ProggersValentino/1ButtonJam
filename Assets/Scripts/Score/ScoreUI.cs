@@ -12,6 +12,7 @@ public class ScoreUI : MonoBehaviour
     public TextMeshProUGUI earlyGradeTxt;
     public TextMeshProUGUI lateGradeTxt;
 
+    public float currentScore;
 
     private void OnEnable()
     {
@@ -30,7 +31,7 @@ public class ScoreUI : MonoBehaviour
     /// </summary>
     public void UpdateScoreTxt()
     {
-        float currentScore = ScoreEventSystem.OnRetrieveScore(); //retrieving score from scoreSystem
+        currentScore = ScoreEventSystem.OnRetrieveScore(); //retrieving score from scoreSystem
         
         scoreText.text = currentScore.ToString();
     }

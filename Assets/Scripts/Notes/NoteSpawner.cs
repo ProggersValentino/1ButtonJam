@@ -62,7 +62,7 @@ public class NoteSpawner : MonoBehaviour
                         noteSectionIndex = 0;
                     }
                 }
-                Debug.Log(noteSpaceIndex);
+                //Debug.Log(noteSpaceIndex);
                 timeElapsed = Time.time + sections[noteSectionIndex].noteSpaces[noteSpaceIndex];
             }
         }

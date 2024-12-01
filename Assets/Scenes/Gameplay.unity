@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 207822447}
   - component: {fileID: 207822446}
   - component: {fileID: 207822445}
+  - component: {fileID: 207822449}
   m_Layer: 5
   m_Name: GameUI
   m_TagString: Untagged
@@ -437,6 +438,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &207822449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207822444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d1d9cfd0d90bc4c857386cfb551560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &553120165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1734,6 +1747,7 @@ MonoBehaviour:
   perfectGradeTxt: {fileID: 799240578}
   earlyGradeTxt: {fileID: 1482402812}
   lateGradeTxt: {fileID: 1307556747}
+  currentScore: 0
 --- !u!1 &1889081840
 GameObject:
   m_ObjectHideFlags: 0

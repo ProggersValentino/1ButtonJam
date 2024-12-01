@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
@@ -57,7 +58,7 @@ public class MusicManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("end game");
+                SceneManager.LoadScene("EndScene");
             }
         }
 
@@ -73,6 +74,12 @@ public class MusicManager : MonoBehaviour
                 countDownUI.gameObject.SetActive(false);
             }
         }
+
+        //dev cheat
+        /*if (Input.GetKeyDown(KeyCode.E))
+        {
+            SceneManager.LoadScene("EndScene"); //prematurely load end scene
+        }*/
     }
 
     private void CueTrack()
