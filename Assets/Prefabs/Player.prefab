@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &850292672047801484
 Transform:
   m_ObjectHideFlags: 0
@@ -274,5 +274,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3876564ccba14fc47b2dfba5aa958cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   flySwat: {fileID: 7236076859384685642}
+  flySwatAnim: {fileID: 7400000, guid: 7dc7e97e565219845a03f29e50c7475c, type: 2}
+  flySwatIdle: {fileID: 7400000, guid: 431175e4d9f2cd544b907615d17e8eb2, type: 2}
   bugSpray: {fileID: 7703165558145101756}

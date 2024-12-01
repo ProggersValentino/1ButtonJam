@@ -47,7 +47,7 @@ public class DetectNote : MonoBehaviour
         //if we detect any object that falls under the note classes including children then do this
         if (other.TryGetComponent<Note>(out Note note))
         {
-            if(currentNote) currentNote.DeathNote(); //player missed note
+           // if(currentNote) currentNote.DeathNote(); //player missed note
             
             Debug.Log($"the note is{note}");
             currentNote = note; //set note
@@ -64,11 +64,24 @@ public class DetectNote : MonoBehaviour
         }   
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private async void OnTriggerStay2D(Collider2D other)
     {
         if (onHoldActivated && currentNote is Hold) 
         {
             Debug.LogWarning($"we are currently holding {onHoldActivated}");
+            
+            //stop note
+            Hold holdNote = (Hold)currentNote;
+            
+            currentNote.areStopping = true;
+            
+            holdNote.TakeHealth(250f);
+            
+            await Task.Delay(500); //hit interval
+        }
+        else
+        {
+            currentNote.areStopping = false;
         }
     }
 
@@ -97,6 +110,8 @@ public class DetectNote : MonoBehaviour
     /// </summary>
     public async void ProcessNoteKill()
     {
+        Note targetNote = currentNote;
+        
         //testing async calc allowing calculation to be done on another thread
         Task<float> disCalc = DetermineNoteDisFromCentre();
         
@@ -104,15 +119,14 @@ public class DetectNote : MonoBehaviour
         
         Debug.Log($"our distance from centre of zone is {disCalc.Result}");
 
-        //GetNoteDisFromCentre();
         
         
         ScoreEventSystem.OnUpdateScore(disCalc.Result, currentNote); //transmitting the necessary data for calculating & updating the score
 
-        if (currentNote.TryGetComponent<MenuNote>(out MenuNote note)){
+        if (targetNote.TryGetComponent<MenuNote>(out MenuNote note)){
             note.DeathNote(disCalc.Result);
         } else {
-            currentNote?.DeathNote();
+            targetNote?.DeathNote();
         }
     }
 
