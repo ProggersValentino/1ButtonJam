@@ -57,6 +57,10 @@ public class NoteSpawner : MonoBehaviour
                 {
                     noteSectionIndex++;
                     noteSpaceIndex = 0;
+                    if (noteSectionIndex >= sections.Length)
+                    {
+                        noteSectionIndex = 0;
+                    }
                 }
                 Debug.Log(noteSpaceIndex);
                 timeElapsed = Time.time + sections[noteSectionIndex].noteSpaces[noteSpaceIndex];

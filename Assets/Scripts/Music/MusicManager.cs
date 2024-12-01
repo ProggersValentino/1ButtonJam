@@ -19,8 +19,12 @@ public class MusicManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        countDown = delayInSecs;
-        countDownUI.text = (Mathf.CeilToInt(countDown)).ToString();
+        if (countDownUI)
+        {
+            countDown = delayInSecs;
+            countDownUI.text = (Mathf.CeilToInt(countDown)).ToString(); 
+        }
+        
         if (musicTracks.Count > 0)
         {
             CueTrack();
@@ -57,14 +61,17 @@ public class MusicManager : MonoBehaviour
             }
         }
 
-        countDown = countDown - Time.deltaTime;
-        if (countDown >= 0)
+        if (countDownUI)
         {
-            countDownUI.text = (Mathf.CeilToInt(countDown)).ToString();
-        }
-        else
-        {
-            countDownUI.gameObject.SetActive(false);
+            countDown = countDown - Time.deltaTime;
+            if (countDown >= 0)
+            {
+                countDownUI.text = (Mathf.CeilToInt(countDown)).ToString();
+            }
+            else
+            {
+                countDownUI.gameObject.SetActive(false);
+            }
         }
     }
 

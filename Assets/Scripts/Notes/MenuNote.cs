@@ -13,12 +13,9 @@ public class MenuNote : Note
     public void SetText(){
         switch (sceneIndex) {
             case 0: 
-                tm.text = "Hailey_Dev";
+                tm.text = "Gameplay";
                 break;
             case 1:
-                tm.text = "peter";
-                break;
-            case 2:
                 tm.text = "MainMenu";
                 break;
             default:
