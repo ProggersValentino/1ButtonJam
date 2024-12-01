@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.UI;
 
 /// <summary>
 /// the purpose of this script is to update keep track and process notes that go in zone
@@ -14,6 +15,8 @@ public class DetectNote : MonoBehaviour
     [CanBeNull] Note currentNote = null;
 
     private bool onHoldActivated;
+
+    private Note nextPotentialNote;
     
     private void OnEnable()
     {
@@ -100,6 +103,9 @@ public class DetectNote : MonoBehaviour
         await disCalc; 
         
         Debug.Log($"our distance from centre of zone is {disCalc.Result}");
+
+        //GetNoteDisFromCentre();
+        
         
         ScoreEventSystem.OnUpdateScore(disCalc.Result, currentNote); //transmitting the necessary data for calculating & updating the score
 
@@ -130,5 +136,39 @@ public class DetectNote : MonoBehaviour
     public void HoldActivated(bool isActivated)
     {
         onHoldActivated = isActivated;
+    }
+
+    /// <summary>
+    /// whats the next note in line
+    /// </summary>
+    /// <returns></returns>
+    public Note GetNextNote()
+    {
+        RaycastHit2D[] hits = Physics2D.RaycastAll(currentNote.transform.position, Vector2.right, 10f);
+        
+        
+        foreach (RaycastHit2D hit in hits)
+        {
+        
+            Debug.DrawLine(this.transform.position, 20f * Vector2.right, Color.red, 0.5f);
+            Debug.DrawLine(this.transform.position, hit.point, Color.green, 0.5f);
+
+            if (hit.collider.TryGetComponent<Note>(out Note note))
+            {
+                Debug.Log($"the next note of this is {note.name}");
+                return note;
+            }    
+            
+        }
+        
+        Debug.LogWarning($"UnsuccessfulHit");
+        return null;
+    }
+
+    public float GetNoteDisFromCentre()
+    {
+        Note potentialNote = GetNextNote();
+        Debug.LogWarning($"the next note is {nextPotentialNote.name}");
+        return Vector2.Distance(transform.position, potentialNote.transform.position);
     }
 }
