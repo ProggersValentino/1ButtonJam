@@ -20,7 +20,12 @@ public class MusicManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (countDownUI)
+        {
+            countDown = delayInSecs;
+            countDownUI.text = (Mathf.CeilToInt(countDown)).ToString();
+        }
+
         if (musicTracks.Count > 0)
         {
             CueTrack();
@@ -37,11 +42,6 @@ public class MusicManager : MonoBehaviour
     {
         if (!startPlaying)
         {
-            if (countDownUI)
-            {
-                countDown = delayInSecs;
-                countDownUI.text = (Mathf.CeilToInt(countDown)).ToString();
-            }
             startPlaying = true;
             NS.hasStarted = true;
             Debug.Log(countDown.ToString() + " " + delayInSecs.ToString());
@@ -50,19 +50,6 @@ public class MusicManager : MonoBehaviour
         }
         else if (!music.isPlaying)
         {
-
-            if (countDownUI)
-            {
-                countDown -= Time.deltaTime;
-                if (countDown >= 0)
-                {
-                    countDownUI.text = (Mathf.CeilToInt(countDown)).ToString();
-                }
-                else
-                {
-                    countDownUI.gameObject.SetActive(false);
-                }
-            }
             //cue next track
             startPlaying = false;
             
@@ -77,11 +64,29 @@ public class MusicManager : MonoBehaviour
         }
 
 
+
+        if (countDownUI)
+        {
+            countDown -= Time.deltaTime;
+            if (countDown >= 0)
+            {
+                countDownUI.text = (Mathf.CeilToInt(countDown)).ToString();
+            }
+            else
+            {
+                countDownUI.gameObject.SetActive(false);
+            }
+        }
         //dev cheat
         /*if (Input.GetKeyDown(KeyCode.E))
         {
             SceneManager.LoadScene("EndScene"); //prematurely load end scene
         }*/
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+
+        }
     }
     private void CueTrack()
     {

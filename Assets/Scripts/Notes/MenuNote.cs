@@ -1,4 +1,4 @@
-using NUnit.Framework;
+//using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -32,7 +32,7 @@ public class MenuNote : Note
         } else {
             if (tm.text == "Quit"){
                 Application.Quit();
-                EditorApplication.isPlaying = false;
+                //EditorApplication.isPlaying = false;
             }
             Debug.Log(tm.text);
             SceneManager.LoadScene(tm.text);

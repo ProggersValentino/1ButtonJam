@@ -12,30 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f362b72c9f074e4b8c8a30aaa39b861, type: 3}
   m_Name: Mountain Test
   m_EditorClassIdentifier: 
-  track: {fileID: 8300000, guid: 3d041e62ac48d2145831996896a132ac, type: 3}
+  track: {fileID: 8300000, guid: 48301c73359d99a47abcff1416f732ad, type: 3}
   tempo: 120
   sections:
   - noteSpaces:
-    - 0
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 1
-  - noteSpaces:
     - 0.5
     - 0.5
     - 0.5
@@ -77,6 +57,26 @@ MonoBehaviour:
     - 1
   - noteSpaces:
     - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 0
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 0
+    - 0
+    - 1
+  - noteSpaces:
+    - 0.5
     - 0.25
     - 0.25
     - 0.25
@@ -155,7 +155,6 @@ MonoBehaviour:
     - 0.25
     - 0.25
     - 0.25
-    - 0.25
     noteTypes:
     - 0
     - 0
@@ -163,8 +162,7 @@ MonoBehaviour:
     - 0
     - 0
     - 0
-    - 0
-    - 0
+    - 1
   - noteSpaces:
     - 0.5
     - 0.5
@@ -176,15 +174,135 @@ MonoBehaviour:
     - 1
     - 1
   - noteSpaces:
-    - 0.75
+    - 0.5
     - 0.5
     - 0.5
     - 0.5
     noteTypes:
     - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
     - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
     - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
     - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 0
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 1
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 1
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 1
+    - 1
+    - 1
+    - 1
+  - noteSpaces:
+    - 0.5
+    - 0.5
+    - 0.5
+    - 0.5
+    noteTypes:
+    - 1
+    - 1
+    - 1
+    - 1
   - noteSpaces:
     - 0.5
     - 0.5
@@ -193,8 +311,8 @@ MonoBehaviour:
     noteTypes:
     - 0
     - 0
-    - 0
-    - 0
+    - 1
+    - 1
   - noteSpaces:
     - 0.5
     - 0.5
@@ -203,135 +321,13 @@ MonoBehaviour:
     noteTypes:
     - 0
     - 0
-    - 0
-    - 0
+    - 1
+    - 1
   - noteSpaces:
-    - 0.5
     - 0.5
     - 0.5
     - 0.5
     noteTypes:
     - 0
     - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
-  - noteSpaces:
-    - 0.5
-    - 0.5
-    - 0.5
-    - 0.5
-    noteTypes:
-    - 0
-    - 0
-    - 0
-    - 0
+    - 1

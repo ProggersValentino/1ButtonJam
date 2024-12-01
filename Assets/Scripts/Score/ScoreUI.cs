@@ -1,6 +1,6 @@
 using System;
 using TMPro;
-using UnityEditor.VersionControl;
+//using UnityEditor.VersionControl;
 using UnityEngine;
 using Task = System.Threading.Tasks.Task;
 
@@ -46,8 +46,8 @@ public class ScoreUI : MonoBehaviour
         selectedGradeTxt.gameObject.SetActive(true);
 
         await Task.Delay(2000); // 2 seconds delay
-        
-        selectedGradeTxt.gameObject.SetActive(false);
+        if(selectedGradeTxt != null)
+            selectedGradeTxt.gameObject.SetActive(false);
     }
     
     /// <summary>

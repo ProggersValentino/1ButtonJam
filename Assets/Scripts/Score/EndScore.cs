@@ -12,7 +12,7 @@ public class EndScore : MonoBehaviour
         scoreUI = FindObjectOfType<ScoreUI>();
         if (scoreUI)
         {
-            score.text = "Score\n" + scoreUI.currentScore;
+            score.text = "Score" + scoreUI.currentScore;
             scoreUI.gameObject.SetActive(false); 
         }
     }

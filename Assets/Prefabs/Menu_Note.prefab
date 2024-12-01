@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempo: 120
   canBePressed: 0
+  areStopping: 0
   ND: {fileID: 11400000, guid: 931ebe360bd047d4e8c88e994ec37ab0, type: 2}
 --- !u!212 &7328011972182373230
 SpriteRenderer:
@@ -292,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tempo: 120
   canBePressed: 0
+  areStopping: 0
   ND: {fileID: 11400000, guid: c947fba2fe9d65a4db1f7c4e1b674778, type: 2}
   sceneIndex: 0
   tm: {fileID: 9078273957515144305}

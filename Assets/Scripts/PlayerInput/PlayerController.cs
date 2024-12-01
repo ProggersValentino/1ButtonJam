@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
+using UnityEngine.VFX;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public AnimationClip flySwatIdle;
     Animator flySwatAnimator;
     public GameObject bugSpray;
-    
+    public VisualEffect bugSprayEffect;
     public enum CurrentPlayerObject {FlySwat, BugSpray}
 
     private GameObject currentObject;
@@ -39,11 +40,17 @@ public class PlayerController : MonoBehaviour
             {
                 if (NoteEventSystem.OnNoteIsInZone() is Hold)
                 {
-                  
+                    if (bugSprayEffect != null)
+                        bugSprayEffect.Play();
                 }
                 DetermineSwatOrSpray(CurrentPlayerObject.BugSpray);
                 
                 PlayerEventSystem.OnHoldNoteActivate(true);
+            }
+            else
+            {
+                if (bugSprayEffect != null)
+                    bugSprayEffect.Stop();
             }
             
         };

@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Background_Pattern_Texture:
-        m_Texture: {fileID: 2800000, guid: ce57ba628dbf2c64fb5daf021b15c6d3, type: 3}
+        m_Texture: {fileID: 2800000, guid: cf6a27e48d414e74c9fa8baae1092ad2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Background_Texture:
@@ -84,13 +84,13 @@ Material:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
     - _EnableExternalAlpha: 0
-    - _PinkStrength: 0
+    - _PinkStrength: 0.04
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Colour: {r: 1, g: 1, b: 1, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Speed: {r: 0.09, g: 0.16, b: 0, a: 0}
+    - _Speed: {r: 0.01, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &1039281119186541920

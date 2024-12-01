@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static TreeEditor.TreeEditorHelper;
+using UnityEngine.SceneManagement;
+//using static TreeEditor.TreeEditorHelper;
 
 public class NoteSpawner : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class NoteSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hasStarted)
+        if (hasStarted && sections != null)
         {
             if (Time.time > timeElapsed + sections[noteSectionIndex].noteSpaces[noteSpaceIndex])
             {
@@ -59,7 +60,7 @@ public class NoteSpawner : MonoBehaviour
                     noteSpaceIndex = 0;
                     if (noteSectionIndex >= sections.Length)
                     {
-                        noteSectionIndex = 0;
+                        Invoke(nameof(EndGame), 5f);
                     }
                 }
                 //Debug.Log(noteSpaceIndex);
@@ -72,7 +73,7 @@ public class NoteSpawner : MonoBehaviour
     {
         Note temp = Instantiate(note, this.gameObject.transform);
         temp.tempo = currentTempo;
-       // Debug.Log(noteSectionIndex.ToString() + " " + noteSpaceIndex.ToString());
+        Debug.Log(noteSectionIndex.ToString() + " " + noteSpaceIndex.ToString());
     }
 
     // Override for spawning menu notes, this allows the index to be passed so it can update the menu choice appropriately]
@@ -85,4 +86,8 @@ public class NoteSpawner : MonoBehaviour
         temp.SetText();
     }
 
+    void EndGame()
+    {
+        SceneManager.LoadScene("EndScene");
+    }
 }
