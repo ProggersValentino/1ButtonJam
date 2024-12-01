@@ -13,7 +13,7 @@ public class NoteSpawner : MonoBehaviour
     public NoteSection[] sections;
     private int noteSectionIndex = 0;
     private int noteSpaceIndex = 0; //0 for tap and 1 for hold
-
+    public float multi;
     private float timeElapsed = 0f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -72,7 +72,7 @@ public class NoteSpawner : MonoBehaviour
     {
         Note temp = Instantiate(note, this.gameObject.transform);
         temp.tempo = currentTempo;
-        Debug.Log(noteSectionIndex.ToString() + " " + noteSpaceIndex.ToString());
+       // Debug.Log(noteSectionIndex.ToString() + " " + noteSpaceIndex.ToString());
     }
 
     // Override for spawning menu notes, this allows the index to be passed so it can update the menu choice appropriately]

@@ -16,7 +16,7 @@ MonoBehaviour:
   tempo: 120
   sections:
   - noteSpaces:
-    - 0.5
+    - 0
     - 0.5
     - 0.5
     - 0.5
